@@ -17,7 +17,7 @@ print"$ijo
   \ V / | |___| |___| |_| | Invite Code : PX283E
    \_/  |_____|_____|\___/\n ======================================================\n$putih";
 //link
-$link = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=".$access_token;
+$link = "https://e.crashlytics.com/spi/v2/events/tasks?session=".$session;
 //body
 $video = array(
    'locale' => 'in_ID',
@@ -28,15 +28,15 @@ $video = array(
 $body0 = json_encode($video,true);
 //header
 $head = array();
-$head[] = "Host: www.veeuapp.com";
+$head[] = "Host: api.pivot.one";
           "Connection: Keep-Alive";
           "Accept-Encoding: gzip";
           "User-Agent: okhttp/3.10.0";
 $header = array();
-$header[] = "Content-Type: application/json";              
+$header[] = "Content-Type: text/plain";              
              "charset=UTF-8";
              "Content-Length: 96";
-             "Host: www.veeuapp.com";
+             "Host: api.pivot.one";
              "Connection: Keep-Alive";
              "Accept-Encoding: gzip";
              "User-Agent: okhttp/3.10.0";
@@ -51,7 +51,7 @@ sleep(1);
 while (true) :
 $curl = curl_init();
 curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://www.veeuapp.com/v1.0/me?access_token=".$access_token,
+    CURLOPT_URL => "https://e.crashlytics.com/spi/v2/events/me?session=".$session,
     CURLOPT_RETURNTRANSFER => 1,
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTPHEADER => $head,
@@ -112,8 +112,8 @@ exit;
 }
 else{
 echo "$kuning.[>] $ijo sukses $putih| user: $biru".$jres['user']['nickname']."$ijo
-[!] $turkis reward_point:$putih ".$jvid['task']['reward_point']."$ijo | $turkis complete_seconds:$putih ".$jvid['task']['extra']['complete_seconds']."$ijo
-[!] $turkis current_point:$putih ".$jvid['point']['current_point']."$ijo | $turkis today_revenue_point:$putih ".$jvid['point']['today_revenue_point']."
+[!] $turkis reward_power:$putih ".$jvid['task']['reward_point']."$ijo | $turkis complete_seconds:$putih ".$jvid['task']['extra']['complete_seconds']."$ijo
+
 =======================================================\r\n";}
 endwhile;
 ?>
