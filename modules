@@ -2,9 +2,9 @@
 
 //include(readline("config: "));
 //link
-$link = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=".$access_token;
-$link2 = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=".$access_token;
-$link3 = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=".$access_token;
+$link = "https://e.crashlytics.com/spi/v2/events/tasks?session= ".$session;
+$link2 = "https://e.crashlytics.com/spi/v2/events/tasks?session= ".$session;
+$link3 = "https://e.crashlytics.com/spi/v2/events/tasks?session= ".$session;
 //body
 $jbody = array(
  'locale' => 'in_ID',
@@ -31,10 +31,10 @@ $body2 = json_encode($milstone,true);
 $body3 = json_encode($box,true);
 //header
 $header = array();
-$header[] = 	"Content-Type: application/json";              
+$header[] = 	"Content-Type: text/plain";              
              "charset=UTF-8";
              "Content-Length: 96";
-             "Host: www.veeuapp.com";
+             "Host: api.pivot.one";
              "Connection: Keep-Alive";
              "Accept-Encoding: gzip";
              "User-Agent: okhttp/3.10.0";
